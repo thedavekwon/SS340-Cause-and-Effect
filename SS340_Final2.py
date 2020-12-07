@@ -12,7 +12,7 @@ from scipy import stats
 import statsmodels.api as sm
 
 
-df = pd.read_csv('processed.csv')
+df = pd.read_csv('processed_urinary.csv')
 
 print(df['Race'].unique())
 
