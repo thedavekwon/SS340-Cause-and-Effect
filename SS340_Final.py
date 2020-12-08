@@ -34,7 +34,7 @@ def convert_to_long(loc):
     return cache[loc][0]
   
 
-df = pd.read_csv('United States and Puerto Rico Cancer Statistics, 1999-2017 Incidence.txt', delimiter='\t')
+df = pd.read_csv('2.txt', delimiter='\t')
 df.drop(['Notes', 'MSA Code'], axis=1, inplace=True)
 df = df.dropna()
 df = df[df['MSA'] != 'Other']
@@ -81,7 +81,7 @@ df['min_dist'].describe()
 df['Crude Rate'] = df['Crude Rate'].astype(float)
 
 
-df.to_csv('processed.csv', index=False) 
+df.to_csv('processed_urinary.csv', index=False) 
 
 X = df[['min_dist','Sex']]
 X = sm.add_constant(X)
